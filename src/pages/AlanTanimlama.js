@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import Select from "react-select";
 import Header from '../components/Header';
 const AlanTanimlama = () => {
-    const [baslik,setBaslik] =useState("ETKİNLİK ALANI TANIMLAMA");
+    const [baslik, setBaslik] =useState("ETKİNLİK ALANI TANIMLAMA");
     const [etkinlikAlan, setEtkinlikAlan] = useState("");
     const contacts = useSelector((state) => state);
     const navigate = useNavigate();

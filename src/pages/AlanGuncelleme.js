@@ -2,9 +2,8 @@ import React, { useState,useEffect } from 'react'
 import { useNavigate, Link,useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from "react-toastify";
-
-import Select from "react-select";
 import Header from '../components/Header';
+
 const AlanGuncelleme = () => {
     const [baslik,setBaslik] =useState("ETKİNLİK ALAN ADI");
     const { id } = useParams();

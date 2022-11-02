@@ -10,8 +10,7 @@ import BasvuruFormu from "./components/BasvuruFormu";
 import SosyalPolitikalar from "./pages/SosyalPolitikalar";
 import Takvim from "./pages/Takvim"; 
 import AlanTanimlama from "./pages/AlanTanimlama";
-import Home from "./pages/Home";
-import AddContact from "./pages/AddContact";
+import Home from "./pages/Home";  
 import EditContact from "./pages/EditContact";
 const App = () => {
 
@@ -20,7 +19,6 @@ const App = () => {
       <ToastContainer />
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route path="/add" element={<AddContact />} />
         <Route path="/edit/:id" element={<EditContact />} />
         <Route path="/alanTanimlama" element={<AlanTanimlama />} />
         <Route path="/takvim" element={<Takvim />} />

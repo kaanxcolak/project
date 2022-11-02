@@ -3,9 +3,12 @@ import { useNavigate, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from "react-toastify";
 import { BsFillReplyFill } from "react-icons/bs";
+import Header from '../components/Header';
+
 
 
 const BasvuruFormu = () => {
+    const [baslik, setBaslik] =useState("ETKİNLİK ANIMLAMA");
     const [ad, setAd] = useState("");
     const [soyad, setSoyad] = useState("");
     const [tckn, setTckn] = useState("");
@@ -27,6 +30,7 @@ const BasvuruFormu = () => {
 
     return (
         <form >
+        <Header title={baslik} />
             <div className='border-bottom-dark py-1 mt-5'>
                 {/* container - start */}
                 <div className="container ">
@@ -37,7 +41,7 @@ const BasvuruFormu = () => {
                             <img src="https://ipa.istanbul/wp-content/uploads/2021/08/IPA_RENKLI-TR-01-1-300x117.png" alt="ipa" />
                         </div>
                         <div className="col-md-4 mt-3 ">
-                            <div className="div" onC></div>
+                            <div className="div" onClick={baslik}></div>
                             {
                                 contacts.map((contact) => (
                                     <div className="div">

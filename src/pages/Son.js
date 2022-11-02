@@ -1,8 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useSelector } from 'react';
 import { Link } from "react-router-dom";
 
 
 const Son = () => {
+    const [etkinlikAd, setEtkinlikAd] = useState("");
+
+    const contacts = useSelector((state) => state);
+    const data = {
+        id: contacts[contacts.length - 1].id + 1,
+        etkinlikAd,
+    };
+
+
 
     return (
         <form >
@@ -14,7 +23,7 @@ const Son = () => {
                             <img src="https://ipa.istanbul/wp-content/uploads/2021/08/IPA_RENKLI-TR-01-1-300x117.png" alt="ipa" />
                         </div>
                         <div className="col-md-4 mt-4 ">
-                            <span><h4 className="fw-semibold">SOSYAL POLİTİKALAR ÇALIŞTAYI BAŞVURU FORMU</h4></span>
+                            <span><h4 className="fw-semibold">{contacts.etkinlikAd} BAŞVURU FORMU</h4></span>
                         </div>
                         <div className="col-md-4 mt-5 ">
                             <div className="navMenu col-6 position-relative">
