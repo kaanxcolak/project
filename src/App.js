@@ -1,25 +1,42 @@
-import logo from './logo.svg';
+import React from "react";
 import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 
-function App() {
+import Etkinliklerim from "./components/Etkinliklerim";
+import Son from "./pages/Son";
+import AlanGuncelleme from "./pages/AlanGuncelleme";
+import BasvuruFormu from "./components/BasvuruFormu";
+import SosyalPolitikalar from "./pages/SosyalPolitikalar";
+import Takvim from "./pages/Takvim"; 
+import AlanTanimlama from "./pages/AlanTanimlama";
+import Home from "./pages/Home";
+import AddContact from "./pages/AddContact";
+import EditContact from "./pages/EditContact";
+const App = () => {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ToastContainer />
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route path="/add" element={<AddContact />} />
+        <Route path="/edit/:id" element={<EditContact />} />
+        <Route path="/alanTanimlama" element={<AlanTanimlama />} />
+        <Route path="/takvim" element={<Takvim />} />
+        <Route path="/sosyalPolitikalar" element={<SosyalPolitikalar />} />
+        <Route path="/basvuruFormu" element={<BasvuruFormu />} />
+        <Route path="/alanGuncelleme/:id" element={<AlanGuncelleme />} />
+        <Route path="/son" element={<Son />} />
+        <Route path="/etkinliklerim" element={<Etkinliklerim />} />
+      
+      </Routes>
+
+     
+
+
     </div>
   );
-}
+};
 
 export default App;

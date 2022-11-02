@@ -1,38 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 .App {
-  text-align: center;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.fw-semibold {
+    color: #5A595C;
+    font-weight: bold;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.col-sm-4 {
+    color: #5A595C;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.form-select {
+    background-color: #ED296E;
 }
 
-.App-link {
-  color: #61dafb;
+.border-bottom-dark {
+    border-bottom: 7px solid #ED296E;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.border-bottom-yellow {
+    border-bottom: 7px solid #FAAC32;
+}
+
+.btn-color {
+    background-color: #FAAC32;
+}
+
+.table-bordered {
+    border: 0.5px solid #5A595C;
+}
+
+.thead {
+    background-color: #009CD8;
+}
+
+.form-check-label {
+    align-items: left;
+}
+
+input {
+    background-color: #2EBCBB;
+    opacity: 1;
+}
+
+.btn {
+    margin-top: 0px;
+    margin-bottom: 40px;
+}
+
+.navMenu {
+    z-index: 1;
+    background-color: #ED296E;
+    color: #ffff;
+    margin-left: 49%;
+}
+
+.subMenu {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    z-index: 1;
+    display: none;
+    background-color: #ED296E;
+}
+
+.navMenu:hover .subMenu {
+    display: block;
+}
+
+.ui-fluid-card {
+    background-color: #FAAC32;
+    border-radius: 30px;
+}
+
+.ui-fluid-card2 {
+    background-color: #2AB35B;
+    border-radius: 30px;
+}
+
+.ui-fluid-card3 {
+    background-color: #009CD8;
+    border-radius: 30px;
+}
+
+.ui-fluid-card4 {
+    background-color: #ED296E;
+    border-radius: 30px;
+}
+
+.card-footer {
+    border-radius: 30px;
+    background-color: #FFFFFF;
+    color: #FAAC32;
+}
+
+.card-body {
+    color: #FAAC32;
 }
