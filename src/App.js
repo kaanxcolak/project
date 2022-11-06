@@ -6,7 +6,7 @@ import { ToastContainer } from "react-toastify";
 import Etkinliklerim from "./pages/Etkinliklerim";
 import Son from "./pages/Son";
 import AlanGuncelleme from "./pages/AlanGuncelleme";
-import BasvuruFormu from "./components/BasvuruFormu";
+import BasvuruFormu from "./pages/BasvuruFormu";
 import SosyalPolitikalar from "./pages/SosyalPolitikalar";
 import Takvim from "./pages/Takvim"; 
 import AlanTanimlama from "./pages/AlanTanimlama";
