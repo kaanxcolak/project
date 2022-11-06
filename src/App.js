@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 
-import Etkinliklerim from "./components/Etkinliklerim";
+import Etkinliklerim from "./pages/Etkinliklerim";
 import Son from "./pages/Son";
 import AlanGuncelleme from "./pages/AlanGuncelleme";
 import BasvuruFormu from "./components/BasvuruFormu";
