@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { toast } from "react-toastify";
+import { useSelector } from 'react-redux';
 import Header from "../components/Header";
 import Pagination from "../components/Pagination";
 
@@ -12,17 +10,8 @@ const Etkinliklerim = () => {
     const [etkinlikAlan, setEtkinlikAlan] = useState("");
 
     const contacts = useSelector((state) => state);
-    const navigate = useNavigate();
-    const dispatch = useDispatch();
-    const data = {
-        id: contacts[contacts.length - 1].id + 1,
-        etkinlikAd,
 
-    };
-    const deleteContact = (id) => {
-        dispatch({ type: "DELETE_CONTACT", payload: id });
-        toast.success("Event Silindi!");
-    };
+
     return (
         <form>
             <Header title={baslik} />
