@@ -13,11 +13,31 @@ const initialState = [
         id: 1,
         etkinlikAd: "SOSYAL POLİTİKALAR ÇALIŞTAYI-2",
         etkinlikAciklama: "Açıklama,açıklama",
-        tarih:"2022.01.08",
-        etkinlikAlan:"Hangar",
-        kontenjan: 100,
+        tarih:"2022.01.10",
+        etkinlikAlan:"Kütüphane",
+        kontenjan: 80,
         basvuruSayisi:50,
         kalanKontenjan:50,
+    },
+    {
+        id: 2,
+        etkinlikAd: "SOSYAL POLİTİKALAR ÇALIŞTAYI-3",
+        etkinlikAciklama: "Açıklama,açıklama",
+        tarih:"2022.08.02",
+        etkinlikAlan:"Havuz",
+        kontenjan: 60,
+        basvuruSayisi:50,
+        kalanKontenjan:25,                    
+    },
+    {
+        id:3,
+        etkinlikAd: "SOSYAL POLİTİKALAR ÇALIŞTAYI-4",
+        etkinlikAciklama: "Açıklama,açıklama",
+        tarih:"2022.01.01",
+        etkinlikAlan:"Hangar",
+        kontenjan: 90,
+        basvuruSayisi:75,
+        kalanKontenjan:25,                    
     },
 ];
 
@@ -33,8 +53,7 @@ const contactReducer = (state = initialState, action) => {
         case "DELETE_CONTACT":
             const filterContacts = state.filter((contact) => contact.id !== action.payload && contact);
             state = filterContacts;
-            return state;
-        
+            return state;     
         default:
             return state;
     }
