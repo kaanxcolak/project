@@ -1,28 +1,14 @@
-import React, { useState,useEffect } from 'react'
-import { useNavigate, Link,useParams } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { toast } from "react-toastify";
+import React, { useState } from 'react'
+import Guncelle from '../components/Guncelle';
 import Header from '../components/Header';
+import { toast } from "react-toastify";
+import { useNavigate, useParams } from 'react-router-dom';
 
 const AlanGuncelleme = () => {
     const [baslik,setBaslik] =useState("ETKİNLİK ALAN ADI");
+    const [etkinlikAlan, setEtkinlikAlan] = useState("");    
     const { id } = useParams();
-    const [etkinlikAlan, setEtkinlikAlan] = useState("");
-    const contacts = useSelector((state) => state);
     const navigate = useNavigate();
-    const dispatch = useDispatch();
-
-    const deleteContact = (id) => {
-        dispatch({ type: "DELETE_CONTACT", payload: id });
-        toast.success("Event Silindi!");
-    };
-
-    const currentContact = contacts.find(contact => contact.id === parseInt(id));
-    useEffect(() => {
-        if (currentContact) {
-            setEtkinlikAlan(currentContact.etkinlikAlan);
-        }
-    }, [currentContact]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -32,14 +18,10 @@ const AlanGuncelleme = () => {
         const data = {
             id: parseInt(id),
             etkinlikAlan,
-        };  
-
-        dispatch({ type: "UPDATE_CONTACT", payload: data });
-        toast.success("Event Updated Successfully!");
-        navigate("/alanTanimlama");
-
-       
+        };
     };
+    
+
     return (
         <form onSubmit={handleSubmit}>
             <Header title={baslik} />
@@ -73,19 +55,7 @@ const AlanGuncelleme = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {
-                                        contacts.map((contact, id) => (
-                                            <tr key={id}>
-                                                <td>{id + 1}</td>                                              
-                                                <td>{contact.etkinlikAlan}</td>                                             
-                                                <td>
-                                                    <Link to={`/alanGuncelleme/${contact.id}`} className="btn btn-small btn-primary mr-2 " >DÜZENLE</Link>
-                                                    <button type='button' onClick={() => deleteContact(contact.id)} className="btn btn-small btn-danger" >SİL</button>
-                                                </td>
-
-                                            </tr>
-                                        ))
-                                    }
+                                <Guncelle />
                                 </tbody>
                             </table>
                         </div>
@@ -97,6 +67,6 @@ const AlanGuncelleme = () => {
 
         </form>
     )
-}
 
+}
 export default AlanGuncelleme;

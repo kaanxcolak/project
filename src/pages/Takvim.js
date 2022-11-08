@@ -101,7 +101,7 @@ const Takvim = () => {
                                                                                 <h6>{contact.kontenjan - contact.basvuruSayisi}</h6> <br />
                                                                             </div>
                                                                         </div>
-                                                                        <Link to={`/basvuruFormu`} className="btn btn-light px-5">Başvur</Link>
+                                                                        <Link to={`/basvuruFormu`} value={etkinlikAd} onChange={e => setEtkinlikAd(e.target.value)} className="btn btn-light px-5">Başvur</Link>
                                                                     </div>
                                                                     <div class="card-footer bg-light">
                                                                         <Link to={`/sosyalPolitikalar`} className='h6 w-100 mb-2'>Detaylar | <BsFillShareFill/></Link>

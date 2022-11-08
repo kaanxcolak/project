@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { toast } from "react-toastify";
-import Select from "react-select";
 
 import Header from "../components/Header";
 

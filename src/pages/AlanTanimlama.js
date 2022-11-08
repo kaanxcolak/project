@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from "react-toastify";
-
-import Select from "react-select";
 import Header from '../components/Header';
+import Guncelle from '../components/Guncelle';
+
 const AlanTanimlama = () => {
     const [baslik, setBaslik] =useState("ETKİNLİK ALANI TANIMLAMA");
     const [etkinlikAlan, setEtkinlikAlan] = useState("");
@@ -61,18 +61,7 @@ const AlanTanimlama = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {
-                                        contacts.map((contact, id) => (
-                                            <tr key={id}>
-                                                <td>{id + 1}</td>                                              
-                                                <td>{contact.etkinlikAlan}</td>                                             
-                                                <td>
-                                                    <Link to={`/alanGuncelleme/${contact.id}`} className="btn btn-small btn-primary mr-2 " >DÜZENLE</Link>
-                                                    <button type='button' onClick={() => deleteContact(contact.id)} className="btn btn-small btn-danger" >SİL</button>
-                                                </td>
-                                            </tr>
-                                        ))
-                                    }
+                                    <Guncelle/>
                                 </tbody>
                             </table>
                         </div>
