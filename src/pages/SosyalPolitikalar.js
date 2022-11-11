@@ -6,7 +6,7 @@ import { BsFillCalendarMonthFill, BsMapFill, BsPeopleFill, BsFillBellFill, BsFil
 import Header from "../components/Header";
 
 const SosyalPolitikalar = () => {
-    const [baslik,setBaslik] = useState("Başvuru Formu");
+    const [baslik,setBaslik] = useState("Başvuru ");
     const { id } = useParams();
     const [etkinlikAd, setEtkinlikAd] = useState("");
     const [tarih, setTarih] = useState("");

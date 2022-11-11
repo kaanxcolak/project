@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate, Link, useParams } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from "react-toastify";
 import { BsFillReplyFill } from "react-icons/bs";
@@ -10,19 +10,17 @@ import Header from '../components/Header';
 const BasvuruFormu = () => {
     const [baslik, setBaslik] = useState("");
     const [ad, setAd] = useState("");
-    const { id } = useParams();
     const [soyad, setSoyad] = useState("");
     const [tckn, setTckn] = useState("");
     const [email, setEmail] = useState("");
     const [telefon, setTelefon] = useState("");
     const [kartNo, setKartNo] = useState("");
     const [etkinlikAd, setEtkinlikAd] = useState("");
+
     const contacts = useSelector((state) => state);
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-    const currentContact = contacts.find((contact) => contact.id === parseInt(id));
-    
     const data = {
         id: contacts[contacts.length - 1].id + 1,
         etkinlikAd,
@@ -42,7 +40,7 @@ const BasvuruFormu = () => {
                         <div className="col-md-4 mt-3 ">
                             <div className="div">
                                 {
-                                    currentContact.map((contact) => (
+                                    contacts.map((contact) => (
                                         <div className="div">
                                             <span><h4 className="fw-semibold" >{contact.etkinlikAd} BAŞVURU FORMU </h4></span>
 
