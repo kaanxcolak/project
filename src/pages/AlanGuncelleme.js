@@ -1,20 +1,41 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import Guncelle from '../components/Guncelle';
 import Header from '../components/Header';
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams, useNavigate } from 'react-router-dom';
 import { toast } from "react-toastify";
 
 
+
 const AlanGuncelleme = () => {
-    const [baslik,setBaslik] =useState("ETKİNLİK ALAN ADI");
-    const [etkinlikAlan, setEtkinlikAlan] = useState("");    
+    const [baslik, setBaslik] = useState("ETKİNLİK ALAN ADI");
+    const [etkinlikAlan, setEtkinlikAlan] = useState("");
+    const { id } = useParams();
+
+    const contacts = useSelector((state) => state);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    const currentContact = contacts.find(contact => contact.id === parseInt(id));
+    useEffect(() => {
+        if (currentContact) {
+            setEtkinlikAlan(currentContact.etkinlikAlan);
+        }
+    }, [currentContact]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!etkinlikAlan) {
-            return toast.warning("Lütfen alanları doldurunuz!");
+            return toast.warning("Lütfen alanı doldurunuz!");
         }
-    };
-    
+        const data = {
+            id: parseInt(id),
+            etkinlikAlan,
+        };
+        dispatch({ type: "UPDATE_CONTACT", payload: data });
+        toast.success("Event Updated Successfully!");
+        navigate("/");    
+};
     return (
         <form onSubmit={handleSubmit}>
             <Header title={baslik} />
@@ -28,7 +49,9 @@ const AlanGuncelleme = () => {
                 <div className="row mt-5 mb-5">
 
                     <div className="col-sm-12 text-light ">
-                    <button type='submit' className='btn btn-success px-5'>Güncelle</button>
+                        <button type='submit' className='btn btn-success px-5'>Güncelle</button>
+
+
                     </div>
 
                 </div>
@@ -48,7 +71,7 @@ const AlanGuncelleme = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                <Guncelle />
+                                    <Guncelle />
                                 </tbody>
                             </table>
                         </div>
