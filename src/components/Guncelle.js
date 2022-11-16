@@ -31,6 +31,7 @@ const Guncelle = () => {
                 <td>
                     <Link to={`/alanGuncelleme/${contact.id}`} className="btn btn-small btn-primary mr-2 " >DÜZENLE</Link>
                     <button type='button' onClick={() => deleteContact(contact.id)} className="btn btn-small btn-danger" >SİL</button>
+                    
                 </td>
 
             </tr>
