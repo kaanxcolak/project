@@ -5,7 +5,7 @@ import Header from '../components/Header';
 
 const Son = () => {
     const [etkinlikAd, setEtkinlikAd] = useState("");
-
+    const [baslik, setBaslik] = useState("BAŞVURU FORMU");
     const contacts = useSelector((state) => state);
     const data = {
         id: contacts[contacts.length - 1].id + 1,
@@ -14,7 +14,7 @@ const Son = () => {
 
     return (
         <form >
-            <Header/>
+            <Header title={baslik} />
             <div className="container">
                 <div className="row">
                     <div className="col-12 mt-5">
@@ -31,7 +31,6 @@ const Son = () => {
                 </div>
             </div>
         </form>
-
     )
 }
 

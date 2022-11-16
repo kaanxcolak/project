@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { toast } from "react-toastify";
 
 import Header from "../components/Header";
@@ -32,8 +32,6 @@ const EditContact = () => {
             setBasvuruSayisi(currentContact.basvuruSayisi);
             setKalanKontenjan(currentContact.kalanKontenjan);
         }
-
-
     }, [currentContact]);
 
     const handleSubmit = (e) => {

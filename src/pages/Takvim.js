@@ -33,11 +33,7 @@ const Takvim = () => {
         e.preventDefault();
         if (!etkinlikAd) {
             return toast.warning("Lütfen alanları doldurunuz!");
-        }
-        const data = {
-            id: parseInt(id),
-            etkinlikAd,
-        };
+        }        
     };
     return (
         <>
