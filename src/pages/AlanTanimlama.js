@@ -12,11 +12,6 @@ const AlanTanimlama = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-    const deleteContact = (id) => {
-        dispatch({ type: "DELETE_CONTACT", payload: id });
-        toast.success("Event Silindi!");
-    };
-
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!etkinlikAlan) {
