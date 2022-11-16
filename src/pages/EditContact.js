@@ -112,7 +112,7 @@ const EditContact = () => {
                         <div className='container'>
                             <div className="row">
                                 <div className="col-md-12 text-right">
-                                    <button type='submit' className='btn btn-success px-5'>Kaydet</button>
+                                    <button type='submit' className='btn btn-success px-5 mt-5'>Kaydet</button>
 
                                 </div>
                             </div>
