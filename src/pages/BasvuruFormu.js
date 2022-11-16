@@ -3,7 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from "react-toastify";
 import { BsFillReplyFill } from "react-icons/bs";
-import Header from '../components/Header';
+import Header2 from '../components/Header2';
 
 
 
@@ -27,7 +27,7 @@ const BasvuruFormu = () => {
     };
     return (
         <form >
-            <Header title={baslik} />
+            <Header2 title={baslik} />
             
             <div className="container">
                 <div className="row mt-5">

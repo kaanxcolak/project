@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux';
-import Header from "../components/Header";
+import Header2 from "../components/Header2";
 import Pagination from "../components/Pagination";
 
 const Etkinliklerim = () => {
@@ -14,7 +14,7 @@ const Etkinliklerim = () => {
 
     return (
         <form>
-            <Header title={baslik} />
+            <Header2 title={baslik} />
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-12 px-5">

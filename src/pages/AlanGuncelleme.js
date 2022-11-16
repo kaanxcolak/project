@@ -2,26 +2,19 @@ import React, { useState } from 'react'
 import Guncelle from '../components/Guncelle';
 import Header from '../components/Header';
 import { toast } from "react-toastify";
-import { useNavigate, useParams } from 'react-router-dom';
+
 
 const AlanGuncelleme = () => {
     const [baslik,setBaslik] =useState("ETKİNLİK ALAN ADI");
     const [etkinlikAlan, setEtkinlikAlan] = useState("");    
-    const { id } = useParams();
-    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!etkinlikAlan) {
             return toast.warning("Lütfen alanları doldurunuz!");
         }
-        const data = {
-            id: parseInt(id),
-            etkinlikAlan,
-        };
     };
     
-
     return (
         <form onSubmit={handleSubmit}>
             <Header title={baslik} />

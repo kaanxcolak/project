@@ -3,10 +3,10 @@ import { Link, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import { BsFillCalendarMonthFill, BsMapFill, BsPeopleFill, BsFillBellFill, BsFillReplyFill } from "react-icons/bs";
-import Header from "../components/Header";
+import Header2 from "../components/Header2";
 
 const SosyalPolitikalar = () => {
-    const [baslik,setBaslik] = useState("Başvuru ");
+    const [baslik,setBaslik] = useState("İPA ETKİNLİK TAKVİMİ");
     const { id } = useParams();
     const [etkinlikAd, setEtkinlikAd] = useState("");
     const [tarih, setTarih] = useState("");
@@ -32,7 +32,7 @@ const SosyalPolitikalar = () => {
     };
     return (
         <form onSubmit={handleSubmit}>
-            <Header title={baslik}/>
+            <Header2 title={baslik}/>
 
             <div className="container">
                 {

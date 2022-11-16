@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { BsFillCalendarMonthFill, BsMapFill, BsPeopleFill, BsFillBellFill, BsFillShareFill } from "react-icons/bs";
-import { useNavigate, Link, useParams } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { Link, useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import { toast } from "react-toastify";
-import Header from "../components/Header";
+import Header2 from "../components/Header2";
 
 const Takvim = () => {
     const [baslik,setBaslik] =useState("İPA ETKİNLİK TAKVİMİ");
@@ -15,8 +15,6 @@ const Takvim = () => {
     const [kalanKontenjan, setKalanKontenjan] = useState("");
 
     const contacts = useSelector((state) => state);
-    const navigate = useNavigate();
-    const dispatch = useDispatch();
 
     const currentContact = contacts.find((contact) => contact.id === parseInt(id));
     useEffect(() => {
@@ -37,7 +35,7 @@ const Takvim = () => {
     };
     return (
         <>
-            <Header title={baslik}/>
+            <Header2 title={baslik}/>
 
             <div className="container">
                 <div className="row mt-5 mb-5 ">
