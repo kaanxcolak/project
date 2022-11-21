@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from "react-toastify";
-import { BsFillReplyFill } from "react-icons/bs";
 import Header2 from '../components/Header2';
 
 
@@ -15,18 +14,33 @@ const BasvuruFormu = () => {
     const [email, setEmail] = useState("");
     const [telefon, setTelefon] = useState("");
     const [kartNo, setKartNo] = useState("");
-    const [etkinlikAd, setEtkinlikAd] = useState("");
+    const contacts = useSelector((state) => state); 
 
-    const contacts = useSelector((state) => state);
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (!ad || !soyad || !tckn || !email || !telefon || !kartNo) {
+            return toast.warning("Lütfen alanı doldurunuz!");
+        }
+        const data = {
+            id: contacts[contacts.length - 1].id + 1,
+            ad,
+            soyad,
+            tckn,
+            email,
+            telefon,
+            kartNo,
+        };
 
-    const data = {
-        id: contacts[contacts.length - 1].id + 1,
-        etkinlikAd,
-    };
+        dispatch({ type: "ADD_CONTACT", payload: data });
+        toast.success("Etkinlik Eklendi!");
+        navigate("/");
+     
+};
     return (
-        <form >
+        <form onSubmit={handleSubmit}>
             <Header2 title={baslik} />
             
             <div className="container">

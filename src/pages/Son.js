@@ -1,20 +1,15 @@
-import React, { useState, useSelector } from 'react';
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
-import Header from '../components/Header';
+import Header2 from '../components/Header2';
 
 
 const Son = () => {
-    const [etkinlikAd, setEtkinlikAd] = useState("");
+    
     const [baslik, setBaslik] = useState("BAŞVURU FORMU");
-    const contacts = useSelector((state) => state);
-    const data = {
-        id: contacts[contacts.length - 1].id + 1,
-        etkinlikAd,
-    };
 
     return (
         <form >
-            <Header title={baslik} />
+            <Header2 title={baslik} />
             <div className="container">
                 <div className="row">
                     <div className="col-12 mt-5">
@@ -26,12 +21,10 @@ const Son = () => {
                     <div className="col-12">
                     <Link to={`/`} className="btn btn-primary px-5 mt-5" >ANASAYFA</Link>
                     </div>
-
-
                 </div>
             </div>
         </form>
     )
-}
+};
 
 export default Son;
