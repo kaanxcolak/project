@@ -4,8 +4,7 @@ import { Link } from "react-router-dom";
 const Header2 = (props) => {
     return (
 
-        <div className='
-    border-bottom-dark py-1 mt-5'>
+        <div className='border-bottom-dark py-1 mt-5'>
             {/* container - start */}
             <div className="container ">
                 <div className="row mb-3 ">
