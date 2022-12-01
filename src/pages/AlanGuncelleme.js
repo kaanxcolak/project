@@ -33,7 +33,7 @@ const AlanGuncelleme = () => {
             etkinlikAlan,
         };
         dispatch({ type: "UPDATE_CONTACT", payload: data });
-        toast.success("Event Updated Successfully!");
+        toast.success("Etkinlik güncellemesi başarılı!");
         navigate("/");    
 };
     return (

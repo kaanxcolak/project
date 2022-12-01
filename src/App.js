@@ -8,9 +8,9 @@ import Son from "./pages/Son";
 import AlanGuncelleme from "./pages/AlanGuncelleme";
 import BasvuruFormu from "./pages/BasvuruFormu";
 import SosyalPolitikalar from "./pages/SosyalPolitikalar";
-import Takvim from "./pages/Takvim"; 
+import Takvim from "./pages/Takvim";
 import AlanTanimlama from "./pages/AlanTanimlama";
-import Home from "./pages/Home";  
+import Home from "./pages/Home";
 import EditContact from "./pages/EditContact";
 const App = () => {
 
@@ -27,12 +27,7 @@ const App = () => {
         <Route path="/alanGuncelleme/:id" element={<AlanGuncelleme />} />
         <Route path="/son" element={<Son />} />
         <Route path="/etkinliklerim" element={<Etkinliklerim />} />
-      
       </Routes>
-
-     
-
-
     </div>
   );
 };

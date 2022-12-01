@@ -3,6 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from "react-toastify";
 import Header from "../components/Header";
+import Pagination from "../components/Pagination";
 
 const Home = () => {
     const [baslik,setBaslik] = useState("ETKİNLİK TANIMLAMA ALANI");
@@ -147,22 +148,7 @@ const Home = () => {
                                 }
                             </tbody>
                         </table>
-                        <nav aria-label="...">
-                            <ul class="pagination justify-content-center">
-                                <li class="page-item disabled">
-                                    <a class="page-link">Önceki Sayfa</a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item active" aria-current="page">
-                                    <a class="page-link" href="#">2</a>
-                                </li>
-                                <li class="page-item">
-                                <a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">Sonraki Sayfa</a>
-                                </li>
-                            </ul>
-                        </nav>
+                        <Pagination/>
 
                     </div>
                 </div>

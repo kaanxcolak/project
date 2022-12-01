@@ -2,9 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
 import { toast } from "react-toastify";
-
 import Header from "../components/Header";
-
 
 const EditContact = () => {
     const [baslik,setBaslik] = useState("ETKİNLİK TANIMLAMA ALANI");
@@ -51,7 +49,7 @@ const EditContact = () => {
         };
 
         dispatch({ type: "UPDATE_CONTACT", payload: data });
-        toast.success("Event Updated Successfully!");
+        toast.success("Etkinlik güncellemesi başarılı!");
         navigate("/");
     };
     return (
@@ -112,21 +110,15 @@ const EditContact = () => {
                         <div className='container'>
                             <div className="row">
                                 <div className="col-md-12 text-right">
-                                    <button type='submit' className='btn btn-success px-5 mt-5'>Kaydet</button>
-
+                                    <button type='submit' className='btn btn-success px-5 mt-5'>Guncelle</button>
                                 </div>
                             </div>
                         </div>
-
                     </>
                 ) : (
                     <h1 >Etkinlik id'si {id} olan etkinlik yok!</h1>
                 )}
-
-            </div>
-
-
-
+            </div>       
         </form>
     );
 };

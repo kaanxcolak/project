@@ -29,7 +29,7 @@ const Guncelle = () => {
                 <td>{id + 1}</td>
                 <td>{contact.etkinlikAlan}</td>
                 <td>
-                    <Link to={`/alanGuncelleme/${contact.id}`} className="btn btn-small btn-primary mr-2 " >DÜZENLE</Link>
+                    <Link to={`/alanGuncelleme/${contact.id}`} className="btn btn-small btn-primary mr-2 " >GÜNCELLE</Link>
                     <button type='button' onClick={() => deleteContact(contact.id)} className="btn btn-small btn-danger" >SİL</button>
                     
                 </td>

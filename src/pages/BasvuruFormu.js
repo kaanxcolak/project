@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
-import { useNavigate, Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from "react-toastify";
 import Header2 from '../components/Header2';
-
-
 
 const BasvuruFormu = () => {
     const [baslik, setBaslik] = useState("BAŞVURU FORMU");
@@ -14,15 +12,15 @@ const BasvuruFormu = () => {
     const [email, setEmail] = useState("");
     const [telefon, setTelefon] = useState("");
     const [kartNo, setKartNo] = useState("");
-    const contacts = useSelector((state) => state); 
 
+    const contacts = useSelector((state) => state);
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    
+
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!ad || !soyad || !tckn || !email || !telefon || !kartNo) {
-            return toast.warning("Lütfen alanı doldurunuz!");
+            return toast.warning("Lütfen alanları doldurunuz!");
         }
         const data = {
             id: contacts[contacts.length - 1].id + 1,
@@ -35,14 +33,12 @@ const BasvuruFormu = () => {
         };
 
         dispatch({ type: "ADD_CONTACT", payload: data });
-        toast.success("Etkinlik Eklendi!");
-        navigate("/");
-     
-};
+        toast.success("Başvuru Eklendi!");
+        navigate("/son")
+    };
     return (
         <form onSubmit={handleSubmit}>
             <Header2 title={baslik} />
-            
             <div className="container">
                 <div className="row mt-5">
                     <div className="col-sm-4">
@@ -91,15 +87,13 @@ const BasvuruFormu = () => {
                             </label>
                         </div>
                         <div className="col-7">
-                            <Link to={`/son`} className="btn btn-success px-5" >KAYDET</Link>
-
+                            <button type='submit' className='btn btn-success px-5 mt-5'>Kaydet</button>
                         </div>
                     </div>
                 </div>
             </div>
         </form>
-
-    )
-}
+    );
+};
 
 export default BasvuruFormu;
