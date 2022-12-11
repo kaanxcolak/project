@@ -20,7 +20,7 @@ const Guncelle = () => {
 
     const deleteContact = (id) => {
         dispatch({ type: "DELETE_CONTACT", payload: id });
-        toast.success("Etkinlik Silindi!");
+        toast.success("Etkinlik silindi!");
     };
 
     return (
