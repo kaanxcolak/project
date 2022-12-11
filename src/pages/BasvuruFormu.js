@@ -72,7 +72,7 @@ const BasvuruFormu = () => {
                         <input type="text" className='form-control is-valid' value={telefon} onChange={e => setTelefon(e.target.value)} />
                     </div>
                     <div className="col-sm-4">
-                        <label for="inputAd" className="col-sm-6 col-form-label mb-5 ">istanbul Kart No</label>
+                        <label for="inputAd" className="col-sm-6 col-form-label mb-5 ">İstanbul Kart No</label>
                     </div>
                     <div className="col-sm-6">
                         <input type="text" className='form-control is-invalid' value={kartNo} onChange={e => setKartNo(e.target.value)} />
