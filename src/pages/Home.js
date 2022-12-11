@@ -21,7 +21,7 @@ const Home = () => {
 
     const deleteContact = (id) => {
         dispatch({ type: "DELETE_CONTACT", payload: id });
-        toast.success("Event Silindi!");
+        toast.success("Etkinlik silindi!");
     };
 
     const handleSubmit = (e) => {
@@ -142,19 +142,14 @@ const Home = () => {
                                                 <Link to={`/edit/${contact.id}`} className="btn btn-small btn-primary mr-2 " >Güncelle</Link>
                                                 <button type='button' onClick={() => deleteContact(contact.id)} className="btn btn-small btn-danger" >SİL</button>
                                             </td>
-
                                         </tr>
                                     ))
                                 }
                             </tbody>
                         </table>
                         <Pagination/>
-
                     </div>
                 </div>
-                
-                
-
             </div>
         </form>
     );
